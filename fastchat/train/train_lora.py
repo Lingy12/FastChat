@@ -135,6 +135,7 @@ def train():
         model_args.model_name_or_path,
         cache_dir=training_args.cache_dir,
         device_map=device_map,
+        torch_dtype=torch.bfloat16,
         quantization_config=BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_use_double_quant=True,
